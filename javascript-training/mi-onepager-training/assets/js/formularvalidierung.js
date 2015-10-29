@@ -77,7 +77,7 @@ function create_and_append_error_msg( input_element, error_msg ) {
      *  Die Rahmenfarbe des 'input_element' auf die Farbe '#DD1166' setzen
      * ##
      */
-    input_element. /* Hier */ .borderColor = /* Und hier */;
+    input_element.style.borderColor = "#DD1166";
 
     /*
      * ## ADVANCED-TODO:
@@ -87,8 +87,8 @@ function create_and_append_error_msg( input_element, error_msg ) {
      *  2. Vaterlement das 'error_span_element' als Kindelement anfügen
      * ##
      */
-    var input_parent_element = /* 1. HIER */ ;
-    input_parent_element. /* 2. HIER */ ;
+    var input_parent_element = input_element.parentNode;
+    input_parent_element.appendChild(error_span_element) ;
 
     /* Als kleine Hilfe wird vermerkt, dass es bei dem Eingabefeld ein Fehler gab */
     input_element.dataset.error = true;
@@ -133,7 +133,7 @@ var anfrageformular_element = document.querySelector( '#anfrageformular' ),
  *   des Formulars überprüft werden kann, ob Formularfelder evtl. leer gelassen wurden
  * ##
  */
-formular_element. /* Hier */ ( /* und hier */, function( e ) {
+formular_element.querySelector( '#bestaetigen' ).addEventListener ( "click", function( e ) {
     /* Wird auf 'false' gesetzt, sofern irgendwo ein Validierungsfehler auftrat */
     var allValid = true;
 
