@@ -84,6 +84,17 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
         font-size: 1.8rem;
         line-height: 1.8rem;
     }
+    h2, h3 {
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      font-weight: 500;
+      font-size: 1.4rem;
+    }
+    hr {
+      color: green;
+      margin-bottom: 1rem;
+    }
 
 
     p {
@@ -110,20 +121,34 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		* Zwei Navigationspunkte sollen durch eine pinke Linie getrennt werden.
 		* Beim Mouseover soll die Schrift pink werden.
 		*/
-
+    #nav {
+      padding-bottom: 1rem;
+    }
+    #nav > li {
+    float: left;
+    margin: 0 1rem 0 0;
+    }
+    #nav > li:last-child::after{
+      clear: both;
+      content: ".";
+      height: 0px;
+      display: block;
+      visibility: hidden;
+    }
     #nav > li > a {
       text-decoration: none;
       color: black;
       font-weight: bold;
     }
-    #nav > li {
-      border-bottom: 1px solid magenta;
+    #nav > li > a {
+      border-bottom: 1px dotted blue;
     }
     #nav > li:last-child {
       border: none;
     }
     #nav > li > a:hover {
       color: magenta;
+      border-bottom: 1px dotted magenta;
     }
 
 
@@ -138,14 +163,24 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		* Der Name des Autors soll nach rechts ausgerichtet werden.
 		*/
 
-    #interview > blockquote {
-      margin-bottom: 1rem;
-    }
     #interview blockquote{
+      margin-bottom: 1rem;
+      color: #ffffff;
+      padding: 35px 15px;
       background-color: blue;
     }
-    #interview footer {
-
+    #interview blockquote:last-child{
+      background-color: purple;
+    }
+    #interview footer cite {
+      float: right;
+    }
+    #interview footer cite:after {
+      clear: both;
+      content: ".";
+      height: 0px;
+      display: block;
+      visibility: hidden;
     }
 
 
@@ -194,7 +229,7 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		*/
 
     table {
-      width: inherit;
+      width: 100%;
     }
 
 		table tr:not(:last-child){
@@ -205,7 +240,7 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 				padding: 0.5rem 0;
 		}
     table th{
-      font-weight: bold;
+      font-weight: bolder;
       text-align: left;
       padding-bottom: 0.5rem;
     }
@@ -243,6 +278,10 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
       padding: 20px;
       max-width: 80%;
       background-color: white;
+      position: relative;
+    }
+    header {
+      margin-bottom: 1.5rem;
     }
 
 		/* Training Basic:
@@ -259,10 +298,15 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
       padding-bottom: 2rem;
       margin-bottom: 2rem;
     }
+
 		/* Training Basic
 		Alle Sections sollen eine pinke Linie mit Abstand nach oben und unten (2rem) getrennt werden
 		*/
-
+    #dozenten h2 {
+      padding-bottom: 2rem;
+      font-weight: 500;
+      border-bottom: 1px solid #f3f3f3;
+    }
 
 		</style>
 </head>
@@ -349,7 +393,6 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
             <figure>
                 <img src="images/showcase_02.jpg" width="640" height="640" alt="Aufnahme die während der Keynote geschossen wurde"> <img src="images/showcase_03.jpg" width="640" height="640" alt="Aufnahme die während der Keynote geschossen wurde"> <img src="images/showcase_04.jpg" width="640" height="640" alt="Aufnahme von Sebastian Müller mit Zertifikat"> <img src="images/showcase_05.jpg" width="640" height="640" alt="Aufnahme die während der Keynote geschossen wurde"> <img src="images/showcase_06.jpg" width="640" height="640" alt="Nahaufname von Prof. Christian Noss"> <img src="images/showcase_07.jpg" width="640" height="640" alt="Aufnahme vom Foyer während des Showcase">
 
-                <figcaption>visuelle Eindrücke vom Showcase 2014:</figcaption>
             </figure>
 
             <footer>
