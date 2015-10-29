@@ -155,7 +155,7 @@ formular_element.querySelector( '#bestaetigen' ).addEventListener ( "click", fun
      */
 
     /* ## Vorname */
-    if( /* HIER */ === "" ) {
+    if( vorname_input_element.value === "" ) {
         create_and_append_error_msg( vorname_input_element,
                                      "Bitte geben Sie einen Vornamen ein!" );
         allValid = false;
@@ -165,7 +165,7 @@ formular_element.querySelector( '#bestaetigen' ).addEventListener ( "click", fun
     }
 
     /* ## Zuname */
-    if( /* HIER */ === "" ) {
+    if( zuname_input_element.value === "" ) {
         create_and_append_error_msg( zuname_input_element,
                                      "Bitte geben Sie einen Zunamen ein!" );
         allValid = false;
@@ -175,7 +175,7 @@ formular_element.querySelector( '#bestaetigen' ).addEventListener ( "click", fun
     }
 
     /* ## Email */
-    if(     /* HIER */ === ""
+    if( email_input_element.value === ""
         || !email_input_element.value.match(/.+@.+\..+/) ) {
 
         create_and_append_error_msg( email_input_element,
@@ -187,7 +187,7 @@ formular_element.querySelector( '#bestaetigen' ).addEventListener ( "click", fun
     }
 
     /* ## Nachricht */
-    if( /* HIER */ === "" ) {
+    if( nachricht_input_element.value === "" ) {
         create_and_append_error_msg( nachricht_input_element,
                                      "Bitte geben Sie eine Nachricht ein!" );
         allValid = false;
