@@ -29,33 +29,33 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		/*------------------------------------*\
     #colors
 		\*------------------------------------*/
-		
+
 		.green{		#77cc00; }
 		.blue{		#4952e1; }
 		.magenta{ #dd1166; }
 		.purple{ 	#9313c3; }
 		.black{ 	#231f20; }
 		.gray{ 		#fbfbfb; }
-		
-		
-		
-		
-		
+
+
+
+
+
 		/*------------------------------------*\
 		#Header
 		\*------------------------------------*/
-		
+
 		.th-logo{
 			margin-bottom: 4rem;
 		}
-		
+
 		.mi-logo{
 			position: absolute;
 			right: 20px;
 			top: 10px;
 			text-align: center;
 		}
-		
+
 		body > header h1{
 			font-size: 1rem;
 			text-align: center;
@@ -68,22 +68,45 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		/*------------------------------------*\
 		#typo
 		\*------------------------------------*/
-		
+
 		*, footer{
 			/* Training Basic:
 			Alle Texte sollen einen Zeilenabstand von 140% haben
 			*/
-			font-family: 'Open Sans', sans-serif !important;
+      font-family: 'Open Sans', sans-serif !important;
+
+      line-height: 140%;
 		}
-		
+
 		/* Training Basic:
 			Alle Headlines sollen eine Schriftgröße und einen Zeilenabstand von 1.8 Rem haben.
 		*/
 
-		
+    h1, h2, h3, h4, h5, h6{
+
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+
+    }
+
+    h2, h3{
+      margin-bottom: 1.5rem;
+    }
+
+    h3{
+      font-weight: 500;
+
+    }
+
 		/* Training Basic:
 			Alle Paragraphen (p) sollen einen Abstand nach unten von 2 Rem haben, außer wenn auf einen Paragraphen ein weiterer Paragraph folgt.
 		*/
+
+    p {
+
+      margin-bottom: 2rem;
+
+    }
 
 
 
@@ -93,27 +116,96 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		/*------------------------------------*\
     #Navigation
 		\*------------------------------------*/
-		
+
 		/* Training Basic:
 		* Die Navigationspunkte sollen ohne Unterstreichung in schwarz und fett dargestellt werden.
 		* Zwei Navigationspunkte sollen durch eine pinke Linie getrennt werden.
 		* Beim Mouseover soll die Schrift pink werden.
 		*/
 
+    #nav {
+      padding: 1rem;
+    }
+
+    #nav > li {
+
+      float: left;
+      margin: 0 1rem 0 0;
+
+    }
+
+    #nav > li:last-child::after{
+
+      clear: both;
+      content: ".";
+      height: 0px;
+      display: block;
+      visibility: hidden;
+
+    }
 
 
 
+    #nav > li > a{
+
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+
+    }
+
+    #nav > li > a{
+
+      border-bottom: 1px dotted blue;
+
+
+    }
+
+    #nav > li > a:hover{
+
+      color: magenta;
+      border-bottom: 1px dotted magenta;
+    }
 
 
 		/*------------------------------------*\
     #Statements
 		\*------------------------------------*/
-		
+
 		/* Training Basic:
 		* Die Statements aus den Interviews sollen in einer farbigen Box dargestellt werden. Die Hintergrundfarbe der ersten Box soll blau sein, die der zweiten Box lila.
 		* Zwischen zwei Boxen soll ein Abstand von 1 Rem sein.
 		* Der Name des Autors soll nach rechts ausgerichtet werden.
 		*/
+
+    #interview blockquote {
+
+      margin-bottom: 1rem;
+      color: white;
+      padding: 30px 15px;
+      background-color: blue;
+    }
+
+
+    #interview blockquote:last-child {
+      background-color: purple;
+    }
+
+    #interview footer cite {
+
+      float: right;;
+
+    }
+
+    #interview footer cite:after {
+
+      clear: both;
+      content: ".";
+      height: 0px;
+      display: block;
+      visibility: hidden;
+
+    }
 
 
 
@@ -122,13 +214,13 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		/*------------------------------------*\
     #Articles
 		\*------------------------------------*/
-		
+
 		article h1{
 			font-size: 1.2rem;
 			font-weight: 600;
 			margin-bottom: 1rem;
 		}
-		
+
 		article figure img{
 			width: 100%;
 			height: auto;
@@ -137,7 +229,7 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		article figure img:nth-child(n+2){
 			display: none;
 		}
-		
+
 		article figure figcaption{
 			margin-bottom: 1rem;
 		}
@@ -148,33 +240,49 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		/*------------------------------------*\
     #Tables
 		\*------------------------------------*/
-		
-		
+
+
 		/* Training Basic
 		Tabellen sollen über die komplette Breite des Elternelements gehen.
 		*/
 
-		
+
 		/* Training Basic
 		Texte in Tabellenköpfen sollen fett, linksbündig und mit einem Abstand von 0.5 Rem nach unten dargestellt werden.
 		*/
-		
-		table tr:not(:last-child){
-			border-bottom: solid 1px #ddd;
-		}
-		
+
+    table {
+      width: 100%;
+    }
+
+    table tr:not(:last-child){
+      border-bottom: solid 1px #ddd;
+    }
+
+    table th{
+      font-weight: bolder;
+      text-align: left;
+      padding-bottom: 0.5rem;
+    }
+
 		table td{
 				padding: 0.5rem 0;
 		}
-		
+
 		table td + td,table th + th {
 			padding-left: 0.5rem;
 		}
-		
+
 		/* Training Basic
 		Zellen mit der Klasse large sollen eine Breite von 50% bekommen, Zellen mit der Klasse small 10%.
 		*/
+    table .large {
+      width: 50%;
+    }
 
+    table .small {
+      width: 10%;
+    }
 
 
 
@@ -182,28 +290,45 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
 		/*------------------------------------*\
 		#moreStyle
 		\*------------------------------------*/
-		
+
 
 		body {
 			font-size: 100%;
 			font-weight: 300;
 			background-color: rgba(240, 240, 240, 1);
 		}
-		
+
 		/* Training Basic:
 		Alle direkten Kinder des body Elements sollen in einer zentrierten Box mit einer maximalen Breite von 80% der Breite des Browserfensters liegen. Die Box soll einen weißen Hingergrund und einen Innenabstand von 20 Pixeln haben.
 		*/
 
-		
+    body > * {
+      margin: 0 auto;
+      padding: 20px;
+      max-width: 80%;
+      background-color: white;
+      position: relative;
+    }
+
+    header{
+      margin-bottom: 1.5rem;
+    }
+
 		section, table{
 			margin-bottom: 2rem;
 		}
-		
+
+    section{
+      border-bottom: 1px solid magenta;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
 		/* Training Basic
 		Alle Sections sollen eine pinke Linie mit Abstand nach oben und unten (2rem) getrennt werden
 		*/
-		
-		
+
+
 		</style>
 </head>
 
@@ -230,7 +355,7 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
             </ul>
         </nav>
     </header>
-		
+
 		<main>
     <section id="about">
         <h2>Über den Medieninformatik Bachelor Studiengang</h2>
@@ -289,7 +414,7 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
             <figure>
                 <img src="images/showcase_02.jpg" width="640" height="640" alt="Aufnahme die während der Keynote geschossen wurde"> <img src="images/showcase_03.jpg" width="640" height="640" alt="Aufnahme die während der Keynote geschossen wurde"> <img src="images/showcase_04.jpg" width="640" height="640" alt="Aufnahme von Sebastian Müller mit Zertifikat"> <img src="images/showcase_05.jpg" width="640" height="640" alt="Aufnahme die während der Keynote geschossen wurde"> <img src="images/showcase_06.jpg" width="640" height="640" alt="Nahaufname von Prof. Christian Noss"> <img src="images/showcase_07.jpg" width="640" height="640" alt="Aufnahme vom Foyer während des Showcase">
 
-                <figcaption>visuelle Eindrücke vom Showcase 2014:</figcaption>
+
             </figure>
 
             <footer>
@@ -561,68 +686,68 @@ Achten Sie darauf, dass das HTML wohlgeformt und valide ist.
             <fieldset>
 	                <textarea name="nachricht" id="nachricht"></textarea> <label for="nachricht">Ihre Nachricht</label>
 	            </fieldset>
-	
+
 	            <fieldset>
 	                <input type="submit" value="Formular absenden"> <input type="reset" value="Eingaben löschen">
 	            </fieldset>
 	        </form>
 	    </section>
-	
+
 	    <section id="neuigkeiten">
 	        <h2>Neuigkeiten</h2>
-	
+
 	        <ol>
 	            <li>
 	                <article>
 	                    <header>
 	                        <time datetime="2015-10-06 14:00">25.10.2015</time>
-	
+
 	                        <h3>AVM USB-Sticks</h3>
 	                    </header>
-	
+
 	                    <p>Die abgegebenen USB Sticks können ab jetzt im Verleih wieder abgeholt werden. Dienstags und Mittwochs in der Regel zwischen 9 und 15 Uhr, ansonsten auf Anfrage.</p>
 	                </article>
 	            </li>
-	
+
 	            <li>
 	                <article>
 	                    <header>
 	                        <time datetime="2015-09-29 17:00">29.09.2015</time>
-	
+
 	                        <h3>Wpf Anmeldung WiSe 2015 2016</h3>
 	                    </header>
-	
+
 	                    <p>Die WPF Anmeldung ist seit heute unter <a href="http://www.gm.fh-koeln.de/wpf-anmeldung">http://www.gm.fh-koeln.de/wpf-anmeldung</a> möglich!</p>
 	                </article>
 	            </li>
-	
+
 	            <li>
 	                <article>
 	                    <header>
 	                        <time datetime="2015-09-23 10:00">23.09.2015</time>
-	
+
 	                        <h3>WBA2 Workshop Prüfungen 2015</h3>
 	                    </header>
-	
+
 	                    <p>Die Termine für die Prüfung "WBA2: Workshop" am 29. und 30.9. sind nun online: <a href="http://tinyurl.com/pa9w85g">Weitere Informationen</a></p>
 	                </article>
 	            </li>
-	
+
 	            <li>
 	                <article>
 	                    <header>
 	                        <time datetime="2015-09-21 19:00">21.09.2015</time>
-	
+
 	                        <h3>Neue Stellenausschreibung: Systemadministrator/in</h3>
 	                    </header>
-	
+
 	                    <p>Der Bibliomed Verlag sucht Systemadministratoren.</p>
 	                </article>
 	            </li>
 	        </ol>
 	    </section>
 		</main>
-		
+
     <footer>
         <section>
             <img src="images/christiane_gruenloh.jpg" width="172" height="114" alt="Foto von Christiane Grühnloh">
