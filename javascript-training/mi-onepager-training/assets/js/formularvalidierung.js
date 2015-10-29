@@ -133,7 +133,7 @@ var anfrageformular_element = document.querySelector( '#anfrageformular' ),
  *   des Formulars überprüft werden kann, ob Formularfelder evtl. leer gelassen wurden
  * ##
  */
-formular_element.querySelector( '#bestaetigen' ).addEventListener ( "click", function( e ) {
+formular_element.querySelector('input[type="submit"]').addEventListener ( "click", function( e ) {
     /* Wird auf 'false' gesetzt, sofern irgendwo ein Validierungsfehler auftrat */
     var allValid = true;
 
